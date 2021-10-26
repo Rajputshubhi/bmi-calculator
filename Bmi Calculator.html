@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>BODY MASS  INDEX CALCULATOR</title>
+	<link rel="stylesheet" type="text/css" href="bootstrap.css">
+      <meta charset="utf-8">
+         <meta name="viewport" content="width=device-width, initial-scale=1">
+         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+</head>
+<body>
+       <div class="container">
+       	      <div class="card" >
+       	      	<div class="card-header text-center bg-danger text-white">BMI CALCULATOR</div>
+       	      	<div class="card-body">
+       	      		<form class="w-50 m-auto" onsubmit="return false">
+       	      			<div class="form-group" >
+       	      				<label>weight :</label>
+       	      				<br>
+       	      				<input type="text" name="" class="form-control" id="weightbmi">
+       	      			</div>
+       	      			<br>
+       	      			<div class="form-group">
+       	      				<label >height :</label>
+       	      				<input type="text" name=""  class="form-control" id="heightbmi">
+       	      			</div>
+       	      			<div class="form-group">
+       	      				<label >bmi value :</label>
+       	      				<input type="number" name=""  class="form-control" id="resbmi">
+       	      			</div>
+       	      			<div>
+       	      			<button type="submit" class="btn btn-success " onclick="getbmivalue()">CHECK BMI</button>
+       	      		 </div>
+       	      		 <br>
+
+       	      			
+       	      		</form>
+       	      		
+       	      	</div>
+       	      	<div class="card-footer text-center bg-info text-white">A healthy BMI ranges between 19 and 25.</div>
+       	      </div>
+       </div>
+       <script>
+       	   function getbmivalue(){
+       	   	var weight=document.getElementById('weightbmi').value;
+       	   	var height=document.getElementById('heightbmi').value;
+       	   //	var res=document.getElementById('resbmi').value;
+       	   	   height=height * 12;
+       	   	   height=height * 0.025;  //now height in meter
+       	   	   newbmivalue=weight/(height*height);
+
+       	   	  // second trick
+       	   	  // newbmivalue=weight/pow(height,2);
+
+       	   	   newbmivalue=Math.round(newbmivalue)
+
+       	   	   document.getElementById('resbmi').value=newbmivalue;
+
+
+       	   }
+       </script>
+</body>
+</html>
